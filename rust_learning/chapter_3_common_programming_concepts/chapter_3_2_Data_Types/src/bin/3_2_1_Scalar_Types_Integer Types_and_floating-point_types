@@ -6,5 +6,4 @@ fn main() {
     //u is unsigned integer
     //number behind i and u specify how many bit the data type have
     //f is floating-point numbers, which are numbers with decimal points
-  
-}
+    }
