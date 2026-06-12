@@ -7,7 +7,7 @@ fn main() {
         loop {
             println!("remaining = {remaining}");
             if remaining == 9 {
-                break;
+                break; //line 10 break the inner loop within 'counting_up' loop returning to the line 4 when remaining is equal to 9 and when it goes back to line 5 the 'remaining' variables get reset to 10
             }
             if count == 2 {
                 break 'counting_up;
