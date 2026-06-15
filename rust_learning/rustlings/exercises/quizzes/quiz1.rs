@@ -13,6 +13,17 @@
 // fn calculate_price_of_apples(???) -> ??? { ??? }
 
 fn main() {
+  }  
+fn calculate_price_of_apples(apple : i32) -> i32{ 
+    if apple > 40 {
+        let price_apple = 1 ;
+        price_apple * apple 
+        
+    } else {
+        let price_apple = 2 ; 
+        price_apple * apple  
+    }
+    
     // You can optionally experiment here.
 }
 
