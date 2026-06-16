@@ -1,0 +1,6 @@
+fn main() {
+    let s = String::from("Hello"); //This is 'String' type this is mutable and growable it is stored on the heap.
+    let b = "hello" ; //This is "&'static str" type this cant grow or change and it is readed only. 
+
+
+} 
