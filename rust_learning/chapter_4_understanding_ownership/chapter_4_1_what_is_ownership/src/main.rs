@@ -1,9 +1,6 @@
 fn main() {
-    println!("Each value has an owner.");
-    println!("there can only be one owner at a time.");
-    println!("when the owner goes out of the scope the value will be drop."); //s is invalid here
-    let s = "hello"; // s is valid form this point
-    println!("Value of s is {s}."); // do stuff with s
+    let s = String::from("Hello");
+    let b = "hello" ;
 
 
-} // the end of scope s is no longer valid
+} 
