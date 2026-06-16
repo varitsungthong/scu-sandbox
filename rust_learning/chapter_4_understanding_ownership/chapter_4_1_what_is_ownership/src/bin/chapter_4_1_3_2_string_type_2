@@ -1,0 +1,5 @@
+fn main() {
+    let mut s = String::from("hello"); //set variable name 's' as mutable string with "hello"
+    s.push_str(", world!"); // push string slice ", world!" into the mutable string name 's'
+    println!("{s}"); //print mutable string name 's'
+} 
