@@ -1,25 +1,24 @@
 fn main() {
-    let s = String::from("hello");  // s comes into scope
+    let s1 = gives_ownership();        // s1 gets ownership of "world"
 
-    takes_ownership(s);             // s's value moves into the function...
-                                    // ... and so is no longer valid here
+    let s2 = String::from("hello");    // s2 comes into scope
 
-    let x = 5;                      // x comes into scope
+    let s3 = takes_and_gives_back(s2); // s2's value ("hello") moves into the function,
+                                       // and then moves out into s3.
+                                       // s2 is now INVALID.
 
-    makes_copy(x);                  // Because i32 implements the Copy trait,
-                                    // x does NOT move into the function,
-                                    // so it's okay to use x afterward.
+    // PRINTING HELLO WORLD:
+    // s3 holds "hello" and s1 holds "world". Both are currently valid owners.
+    println!("{s3} {s1}");
+    
+} // Here, s3 goes out of scope and is dropped. s2 was moved, so nothing
+  // happens. s1 goes out of scope and is dropped.
 
-    println!("COPY TRAIT IN ACTION x is {x}")
+fn gives_ownership() -> String {       
+    let some_string = String::from("world"); 
+    some_string                        
+}
 
-} // Here, x goes out of scope, then s. However, because s's value was moved,
-  // nothing special happens.
-
-fn takes_ownership(some_string: String) { // some_string comes into scope
-    println!("{some_string}");
-} // Here, some_string goes out of scope and `drop` is called. The backing
-  // memory is freed.
-
-fn makes_copy(some_integer: i32) { // some_integer comes into scope
-    println!("{some_integer}");
-} // Here, some_integer goes out of scope. Nothing special happens.
+fn takes_and_gives_back(a_string: String) -> String {
+    a_string  
+}
