@@ -8,6 +8,9 @@ edition = "2024"
 [dev-dependencies]
 divan = "0.1"
 
+[profile.release]
+debug = true
+
 [[bench]]
 name = "my_benchmarks"
 harness = false
