@@ -1,0 +1,24 @@
+fn main() {
+    let s1 = gives_ownership();        // s1 gets ownership of "world"
+
+    let s2 = String::from("hello");    // s2 comes into scope
+
+    let s3 = takes_and_gives_back(s2); // s2's value ("hello") moves into the function,
+                                       // and then moves out into s3.
+                                       // s2 is now INVALID.
+
+    // PRINTING HELLO WORLD:
+    // s3 holds "hello" and s1 holds "world". Both are currently valid owners.
+    println!("{s3} {s1}");
+    
+} // Here, s3 goes out of scope and is dropped. s2 was moved, so nothing
+  // happens. s1 goes out of scope and is dropped.
+
+fn gives_ownership() -> String {       
+    let some_string = String::from("world"); 
+    some_string                        
+} // this function return string as "world"
+
+fn takes_and_gives_back(a_string: String) -> String {
+    a_string  
+} // this function return the same thing for string
