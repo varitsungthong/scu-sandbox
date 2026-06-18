@@ -1,0 +1,16 @@
+[package]
+name = "chapter_4_1_what_is_ownership"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[dev-dependencies]
+divan = "0.1"
+
+[profile.release]
+debug = true
+
+[[bench]]
+name = "my_benchmarks"
+harness = false
