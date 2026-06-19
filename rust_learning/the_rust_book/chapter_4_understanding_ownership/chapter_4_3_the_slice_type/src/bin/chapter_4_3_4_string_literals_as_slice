@@ -1,4 +1,6 @@
 fn main(){
-    let s = "Hello, world";
-    println!("{s}")
+    let s = "Hello, world"; //this is string literal
+                            //it is a slice pointing to that specific point of binary
+                            // string literal are immutable
+    println!("{s}");
 }
