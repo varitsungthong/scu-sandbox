@@ -2,16 +2,17 @@
 //returns the first word it finds in that string. 
 //If the function doesn’t find a space in the string, 
 //the whole string must be one word, so the entire string should be returned.
+// This approach does use slices but is partially finish.
 fn main(){
     let s1 = String::from("Hello meow maow.");
     let word = first_word(&s1);
     //s1.clear();
     //Rust disallows the mutable reference in clear and the immutable reference in word from existing at the same time.
 
-    println!("the first word is {word}.");
+    println!("the number of char form first word is {word}.");
     
 }
-fn first_word(s : &str ) -> &str {
+fn first_word(s : &String) -> usize {
    let bytes = s.as_bytes(); //convert string to array of bytes
    for(i, &item) in bytes.iter().enumerate(){
     //iter return each element in collection method
@@ -22,6 +23,6 @@ fn first_word(s : &str ) -> &str {
         return &s[0..i];
         }
     }
-    &s[..] //return a borrowed view of the entire allocation
+    &s[..]
 
    }
