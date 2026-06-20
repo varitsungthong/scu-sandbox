@@ -9,7 +9,7 @@ fn main() {
 
     }
     else {
-        println!("How do we get here?");
+        println!("How did we get here?");
     }
 
 }

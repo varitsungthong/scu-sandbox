@@ -1,6 +1,8 @@
 fn main(){
-    let s = "Hello, world"; //this is string literal
-                            //it is a slice pointing to that specific point of binary
-                            // string literal are immutable
+    let s = "Hello, world";     
+    // s is a string slice: &'static str
+    // it points to string data embedded in the program binary
+    // stored in read-only memory and valid for the entire program
+    // therefore it is immutable
     println!("{s}");
 }

@@ -1,20 +1,14 @@
-    
-fn main (){
-    let mut s = String::from("hello");
-
-    {
-        let r1 = &mut s;
-         println!("{r1}")
-    } // r1 goes out of scope here, so we can make a new reference with no problems.
-    
-   
-
-    let r3 = &s;
-    let r4 = &s;
-
-    println!("{r3},{r4}")
-    // Multiple immutable references are allowed because
-    // none of them can modify the data.
-    //if two or more pointer access data at the same time without synchronizer it may cause data race 
-
+fn main() {
+    let reference_to_nothing = dangle();
 }
+
+fn dangle() -> &String { // dangle returns a reference to a String
+                         
+ 
+    let s = String::from("hello"); // s is a new String
+
+    s // we cant return a reference to the String, s
+      // because reference is create inside the function it will become invalid after s goes out of scope
+      // if we return s the ownership move out with no problem
+} // Here, s goes out of scope and is dropped, so its memory goes away.
+  rust_learning/the_rust_book/chapter_4_understanding_ownership/chapter_4_2_references_and_borrowing/src/bin/chapter_4_2_4_dangling_reference
