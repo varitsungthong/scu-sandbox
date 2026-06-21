@@ -1,17 +1,21 @@
+
 fn main() {
-    struct user {
+    struct User {
         active: bool,
         username : String,
         email : String, 
         sign_in_count: u64,
     }
-    let user1 = user {
+    let mut user1 = User {
         active: true,
         username: String::from("TvT123"),
         email: String::from("meow@email.com"),
         sign_in_count: 2,
     };
-    user1.email = String::from("mewwwwosos@gmail.com")
+    user1.email = String::from("mewwwwosos@gmail.com");
+    //all struct field are mutable
+
 }
-    
+
+
 

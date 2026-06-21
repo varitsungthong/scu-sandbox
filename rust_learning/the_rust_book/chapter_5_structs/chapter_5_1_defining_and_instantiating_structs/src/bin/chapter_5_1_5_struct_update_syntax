@@ -1,30 +1,37 @@
 
 fn main() {
+
     struct User {
         active: bool,
         username : String,
         email : String, 
         sign_in_count: u64,
     }
+
     let mut user1 = User {
         active: true,
         username: String::from("TvT123"),
         email: String::from("meow@email.com"),
         sign_in_count: 2,
     };
+
     user1.email = String::from("mewwwwosos@gmail.com");
+
+
+   
     
     //all struct field are mutable
     fn build_user(email: String, username: String) -> User {
     User {
         active: true,
         username, 
-        email,
+        email, //Because the email field and the email parameter have the same name, we only need to write email rather than email: email.
         sign_in_count: 1,
     }
 }
-
-
 }
+
+
+
 
 
