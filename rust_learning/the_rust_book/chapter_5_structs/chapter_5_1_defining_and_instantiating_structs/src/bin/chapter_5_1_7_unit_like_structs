@@ -1,6 +1,6 @@
 struct always_equal;
 fn main() {
- let variables = always_equal;
+ let variables = always_equal:
 }
 
 
