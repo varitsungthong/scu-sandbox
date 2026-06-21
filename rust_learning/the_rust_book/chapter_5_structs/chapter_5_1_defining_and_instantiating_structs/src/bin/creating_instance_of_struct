@@ -8,9 +8,10 @@ fn main() {
     let user1 = user {
         active: true,
         username: String::from("TvT123"),
-        email: String::from("meow@email.com TvT"),
+        email: String::from("meow@email.com"),
         sign_in_count: 2,
     };
+    user1.email = String::from("mewwwwosos@gmail.com")
 }
     
 
