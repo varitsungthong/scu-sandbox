@@ -16,22 +16,24 @@ fn main() {
     };
 
     user1.email = String::from("mewwwwosos@gmail.com");
-
-
-   
     
-    //all struct field are mutable
+    let user2 = User {
+            email: String::from("another@example.com"),
+            ..user1
+        };
+    //all struct field are mutable by default
+    //Creating a new User instance using all but one of the values from user1
+
     fn build_user(email: String, username: String) -> User {
     User {
         active: true,
         username, 
-        email, //Because the email field and the email parameter have the same name, we only need to write email rather than email: email.
+        email,
         sign_in_count: 1,
     }
 }
+
+
 }
-
-
-
 
 
