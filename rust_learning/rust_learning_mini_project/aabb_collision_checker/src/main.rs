@@ -54,26 +54,29 @@ fn main() {
     ];
     dbg!(&instances);
     dbg!(&prototypes);
+
+    println!("Loaded Prototype : {}, ID : {}", prototypes[0].name, prototypes[0].id);
+    println!("instances A id : {}, prototype_ID : {}", instances[0].id, instances[0].prototype_id);
+    println!("instances B id : {}, prototype_ID : {}", instances[1].id, instances[1].prototype_id);
+    println!("instances C id : {}, prototype_ID : {}", instances[2].id, instances[2].prototype_id);
+
     let a = &instances[0];
     let b = &instances[1];
     let c = &instances[2];
 
-
+    let mut clashes = 0;
     if a.aabb.intersect(&b.aabb) {
-        println!("Clash detected! A and B")
+        println!("Clash detected! A and B");clashes += 1
     }
     if b.aabb.intersect(&c.aabb) {
-        println!("Clash detected! B and C")
+        println!("Clash detected! B and C");clashes += 1
     }
     if a.aabb.intersect(&c.aabb) {
-        println!("Clash detected! A and C")
+        println!("Clash detected! A and C");clashes += 1
     }
-    else {
+    if clashes == 0 {
          println!("Clear")
     }
-    println!("Loaded Prototype : {}, ID : {}", prototypes[0].name, prototypes[0].id);
-    println!("instances A id : {}, prototype_ D : {}", instances[0].id, instances[0].prototype_id);
-    println!("instances B id : {}, prototype_ID : {}", instances[1].id, instances[1].prototype_id);
-    println!("instances C id : {}, prototype_ID : {}", instances[2].id, instances[2].prototype_id);
+    
 
 }
