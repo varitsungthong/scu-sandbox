@@ -11,6 +11,6 @@ fn main (){
     let six = plus_one(five);
     let none = plus_one(None);
     println! ("{:?}", five) ;
-     println! ("{:?}", six);
-      println! ("{:?}", none);
+    println! ("{:?}", six);
+    println! ("{:?}", none);
 }
