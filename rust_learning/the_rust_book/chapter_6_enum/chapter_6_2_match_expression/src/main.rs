@@ -14,7 +14,7 @@ fn value_in_cents(coin: Coin) -> u8 {
     }
 }
 fn main (){
-    let coin = Coin::Quarter; 
-    let value = value_in_cents(coin);
-    println! ("{}", value)
+    let coin = Coin::Quarter; //assign coin to enum
+    let value = value_in_cents(coin); //use fn value in cents
+    println! ("{}", value) 
 }
