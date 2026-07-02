@@ -42,7 +42,7 @@ enum Instance {Empty , Mesh(u32) , Extrusion{ length :u32 , area :u32  }}
     
 
 impl Instance {
-    fn get_volume ( self :&Self) -> Option<u32>{
+    fn get_volume ( &Self) -> Option<u32>{
     //let volume = length * area;
     match self {
         Instance::Empty => None ,
