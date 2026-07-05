@@ -1,15 +1,16 @@
 
-
-use std::collections::HashMap;
-
 fn main() {
 
-    let mut scores = HashMap::new();
+    use std::collections::HashMap;
 
-    scores.insert(String::from("Blue"), 10);
-    scores.insert(String::from("Yellow"), 50);
+    let field_name = String::from("Favorite color");
+    let field_value = String::from("Blue");
 
-    for (key, value) in &scores {
+    let mut map = HashMap::new();
+    map.insert(field_name, field_value);;
+        
+    for (key, value) in &map {
         println!("{key}: {value}");
     }
+    
 }
