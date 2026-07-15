@@ -1,0 +1,16 @@
+//There are two ways to cause a panic in practice: 
+//by taking an action that causes our code to panic 
+//(such as accessing an array past the end) 
+//or by explicitly calling the panic! macro.
+
+//you can switch from unwinding to aborting upon a panic 
+//by adding panic = 'abort' to the appropriate [profile] sections in your Cargo.toml file
+
+fn main() {
+    let v = vec![1, 2, 3];
+
+    v[99];
+    //Attempting to access an element beyond the end of a vector, 
+    //which will cause a call to panic!
+
+}

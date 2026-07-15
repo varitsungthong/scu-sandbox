@@ -2,12 +2,10 @@
 fn main() {
 
     use std::collections::HashMap;
-    let text = "hello world wonderful world";
-    let mut map = HashMap::new();
-    for word in text.split_whitespace() {
-      let count = map.entry(word).or_insert(0) ;
-      *count += 1;
-    }
+let mut scores = HashMap::new();
+let team_name = String::from("Arsenal");
 
-    println!("{map:?}");
+scores.insert(team_name, 1);
+
+println!("Added 1 goal for team: {}", team_name);
 }
