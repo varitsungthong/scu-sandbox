@@ -36,7 +36,3 @@ fn read_username_from_file() -> Result<String, io::Error> {
         Err(e) => Err(e),
     }
 }
-fn main() {
-    let test = read_username_from_file().expect("fails");
-    println!("{test}")
-}
