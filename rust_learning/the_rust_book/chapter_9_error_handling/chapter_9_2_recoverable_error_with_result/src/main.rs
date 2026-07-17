@@ -1,42 +1,10 @@
 use std::fs::File;
 use std::io::{self, Read};
 
-//this function is returning Result<T ,E> 
-//where T is fill with String and E is filled with io::Error
-
-//if this function succed, the code that calls 
-//will receive an Ok value that holds a String
-
-//if this function encounter problem , the code that calls
-//the calling code will receive an Err value that holds an instance of io::Error
-
 fn read_username_from_file() -> Result<String, io::Error> {
-
-    //call File::open function.
-    let username_file_result = File::open("hello.txt");
-    //handle the result of File::open with match
-
-    let mut username_file = match username_file_result {
-        //if succeed file become mutable variable in username_file and fucntion continue
-        Ok(file) => file,
-        //if error instead of calling panic we use return to quit the function and pass 
-        //File::open as 'e' to the calling code as function error value
-        Err(e) => return Err(e),
-    };
-
-    //if we have a file handle this will create a new mutable string
     let mut username = String::new();
 
-    //calls the 'read_to_string' method on the file handle in 'username_file' 
-    //to read the contents of the file into 'username'
+    File::open("hello.txt")?.read_to_string(&mut username)?;
 
-    //read_to_string return results<T, E> so we need match incase it fails
-    match username_file.read_to_string(&mut username) {
-        Ok(_) => Ok(username),
-        Err(e) => Err(e),
-    }
-}
-fn main() {
-    let test = read_username_from_file().expect("fails");
-    println!("{test}")
+    Ok(username)
 }
